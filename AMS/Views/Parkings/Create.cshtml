@@ -1,0 +1,67 @@
+﻿@model AMS.Models.ParkingVM
+
+@{
+  ViewData["Title"] = "Add New Tenants";
+}
+
+<div class="card">
+  <div class="card-header">
+  <div class="wrapper-inner-card d-flex justify-content-between align-items-center">
+    <h3 class="text-uppercase">Add New Parking</h3>
+    <button type="button" class="btn back btn-secondary"><a asp-action="Index">Back</a></button>
+  </div>
+  </div>
+  <div class="col-md-12 card-body">
+    <form asp-action="Create" enctype="multipart/form-data" class="">
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label asp-for="TenantId" for="date-of-birth"></label>
+            @Html.DropDownListFor(q => q.TenantId, new SelectList(Model.TenantList, "Value", "Text"), "Select Tenant Name",
+            new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-6">
+          <label asp-for="ParkingNumber" for="input-id-number"></label>
+          <input asp-for="ParkingNumber" type="text" class="form-control" id="input-id-number" placeholder="BC 108">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label asp-for="Amount"></label>
+          <input type="number" asp-for="Amount" class="form-control" id="inputName" placeholder="12">
+        </div>
+        <div class="form-group col-md-6">
+          <label asp-for="ParkingType" for="input-last-name"></label>
+          <input asp-for="ParkingType" type="text" class="form-control" id="input-last-namme" placeholder="Normal">
+        </div>
+      </div>
+
+
+      <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Add New Tenant</button>
+      </div>
+    </form>
+  </div>
+  </div>
+
+
+@section Scripts{
+<script>
+  $(function () {
+    $(".datepicker").datepicker({
+      dateFomat: "yy-mm-dd"
+    });
+  });
+  // Add the following code if you want the name of the file appear on select
+  $(".custom-file-input").on("change", function () {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+</script>
+}
+
+<!--
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+-->

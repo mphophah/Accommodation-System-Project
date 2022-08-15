@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
+using AMS.Contracts;
+using AMS.Data;
+using AMS.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Parkings.Controllers
+{
+
+    [Authorize(Roles ="Administrator")]
+    public class ParkingsController : Controller
+    {
+        private readonly ILeaveTypeRepository _repo;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
+
+        public ParkingsController(
+                IUnitOfWork unitOfWork,
+                IMapper mapper
+
+                )
+        {
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
+            
+        }
+
+<<<<<<< HEAD
+=======
+        // hey I am back
+>>>>>>> master
+        public async Task<ActionResult> index()
+        {
+            var parkings = await _unitOfWork.Parkings.FindAll();
+            // var model = _mapper.Map<List<Parking>, List<ParkingVM>>(parkings.ToList());
+
+            return View();
+            
+        }
+
+    }
+}

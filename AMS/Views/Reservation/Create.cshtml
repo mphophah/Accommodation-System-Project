@@ -1,0 +1,73 @@
+﻿@model AMS.Models.ReservationVM
+
+@{
+  ViewData["Title"] = "Add a rooom";
+}
+
+<div class="card">
+  <div class="card-header">
+  <div class="wrapper-inner-card d-flex justify-content-between align-items-center">
+    <h3 class="text-uppercase">Add Reservation</h3>
+    <button type="button" class="btn back btn-secondary"><a asp-action="Index">Back</a></button>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 card-body">
+      <form asp-action="Create" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label asp-for="TenantId" class="control-label"></label>
+            @Html.DropDownListFor(q => q.TenantId, new SelectList(Model.TenantList, "Value", "Text"), "Select Tenant Name",
+            new { @class = "form-control" })
+            <span asp-validation-for="TenantId" class="text-danger"></span>
+          </div>
+          <div class="form-group col-md-6">
+            <label asp-for="RoomId" class="control-label"></label>
+            @Html.DropDownListFor(q => q.RoomId, new SelectList(Model.RoomList, "Value", "Text"), "Select Room Number", new {
+            @class = "form-control" })
+            <span asp-validation-for="RoomId" class="text-danger"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <div class="form-group">
+              <label asp-for="DateIn" class="control-label"></label>
+              <input asp-for="DateIn" class="form-control datepicker" placeholder="12/12/2012" />
+              <span asp-validation-for="DateIn" class="text-danger"></span>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <div class="form-group">
+              <label asp-for="DateOut" class="control-label"></label>
+              <input asp-for="DateOut" class="form-control datepicker" placeholder="20/02/2020" />
+              <span asp-validation-for="DateOut" class="text-danger"></span>
+            </div>
+          </div>
+          </div>
+          <div class="form-group ">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Add New Reservation</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+
+@section Scripts{
+<script>
+  $(function () {
+    $(".datepicker").datepicker({
+      dateFomat: "yy-mm-dd"
+    });
+  });
+  // Add the following code if you want the name of the file appear on select
+  $(".custom-file-input").on("change", function () {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+</script>
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,50 @@
+﻿@model AMS.Models.ReservationVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="DateIn"></label>
+                    <input type="Name" asp-for="DateIn" class="form-control" id="inputName" placeholder="John">
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="DateOut" for="DateOut">DateOut</label>
+                    <input asp-for="DateOut" type="text" class="form-control" id="input-last-namme" placeholder="Doe">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="TenantList" for="TenantList"></label>
+                    <input asp-for="TenantList" type="Name" class="form-control" id="date-of-birth" placeholder="12/04/2021">
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label asp-for="RoomList" for="RoomList"></label>
+                    <input asp-for="RoomList" type="Name" class="form-control" id="email" placeholder="john@xample.com">
+                </div>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Changes" class="btn btn-success " /> <a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,101 @@
+﻿@model AMS.Models.TenantVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label asp-for="FirstName"></label>
+          <input type="Name" asp-for="FirstName" class="form-control" id="inputName" placeholder="John">
+        </div>
+        <div class="form-group col-md-6">
+          <label asp-for="LastName" for="input-last-name">Surname</label>
+          <input asp-for="LastName" type="text" class="form-control" id="input-last-namme" placeholder="Doe">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label asp-for="DateOfBirth" for="date-of-birth"></label>
+          <input asp-for="DateOfBirth" type="Name" class="form-control" id="date-of-birth" placeholder="12/04/2021">
+        </div>
+        <div class="form-group col-md-6">
+          <label asp-for="IDNumber" for="input-id-number"></label>
+          <input asp-for="IDNumber" type="text" class="form-control" id="input-id-number" placeholder="8103016105084">
+        </div>
+      </div>
+      <!--
+      <div class="form-group">
+        <label asp-for="HomeAddress" for="inputAddress"></label>
+        <input asp-for="HomeAddress" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      </div>
+      -->
+      <div class="form-row">
+        <!--<div class="form-group col-md-6">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div> -->
+      <!--  <div class="form-group col-md-4">
+          <label for="inputState">Province</label>
+          <select id="inputState" placeholder="Hey" class="form-control">
+            <option select>Choose one</option>
+            <option>Eastern Cape</option>
+            <option>Free State</option>
+            <option>Gauteng</option>
+            <option>KwaZulu-Natal</option>
+            <option>Limpopo</option>
+            <option>Mpumalanga</option>
+            <option>Northern Cape</option>
+            <option>North West</option>
+            <option>Western Cape</option>
+          </select>
+        </div>-->
+       <!-- <div class="form-group col-md-2">
+          <label for="inputZip">Zip</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+        -->
+
+        <div class="form-group col-md-6">
+          <label asp-for="Email" for="email"></label>
+          <input asp-for="Email" type="Name" class="form-control" id="email" placeholder="john@xample.com">
+        </div>
+        <div class="form-group col-md-6">
+          <label asp-for="PhoneNumber" for="inputPassword4"></label>
+          <input asp-for="PhoneNumber" type="text" class="form-control" id="inputPassword4" placeholder="071 234 5678">
+        </div>
+
+
+        <div class="form-group col-md-6">
+          <label asp-for="NextOfKinFullName" for="next-of-kin-full-name"></label>
+          <input asp-for="NextOfKinFullName" type="text" class="form-control" id="inputPassword4" placeholder="Deo">
+        </div>
+        <div class="form-group col-md-6">
+          <label asp-for="NextOfKinNumber" for="next-of-kin-number"></label>
+          <input asp-for="NextOfKinNumber" type="text" class="form-control" id="next-of-kin-number"
+            placeholder="071 234 5678">
+        </div>
+                <div class="form-group col-md-6">
+          <label asp-for="HomeAddress" for="next-of-kin-number"></label>
+          <input asp-for="HomeAddress" type="text" class="form-control" id="next-of-kin-number"
+            placeholder="566 45yyy ">
+        </div>
+
+      </div>
+            <div class="form-group">
+                <input type="submit" value="Save Changes" class="btn btn-success " /> <a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,62 @@
+﻿@model AMS.Models.RoomVM
+@{
+  ViewData["Title"] = "Add a rooom";
+}
+
+<div class="card">
+  <div class="card-header">
+  <div class="wrapper-inner-card d-flex justify-content-between align-items-center">
+    <h3 class="text-uppercase">Add A Room</h3>
+    <button type="button" class="btn back btn-secondary"><a asp-action="Index">Back</a></button>
+  </div>
+  </div>
+    <div class="col-md-12 card-body">
+      <form asp-action="Create" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label asp-for="RoomNumber" for="room-number"></label>
+            <input asp-for="RoomNumber" type="text" class="form-control" id="room-number" placeholder="Room 123">
+          </div>
+          <div class="form-group col-md-6">
+            <label asp-for="Block" for="inputPassword4"></label>
+            <input asp-for="Block" type="text" class="form-control" id="inputPassword4" placeholder="Block 123">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label asp-for="Status" for="inputState"></label>
+            <select id="inputState" class="form-control">
+              <option select>Choose one</option>
+              <option>Occupied</option>
+              <option>Free</option>
+              <option>Damage</option>
+              <option>Resrved</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label asp-for="RoomType" for="inputState"></label>
+            <select id="inputState" class="form-control">
+              <option select>Choose one</option>
+              <option>Single Bed Room</option>
+              <option>Double Bed Room</option>
+            </select>
+          </div>
+        </div>
+          <div class="form-group ">
+            <label asp-for="Description" for="description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+          </div>
+          <div class="form-group ">
+            <label asp-for="Amount" for="inputState"></label>
+            <input asp-for="Amount" type="number" class="form-control" id="inputPassword4" placeholder="200">
+          </div>
+          <div class="form-group form-group mt-3 ">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Add New Room</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
