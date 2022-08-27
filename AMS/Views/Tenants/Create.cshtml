@@ -26,11 +26,11 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label asp-for="DateOfBirth" for="date-of-birth"></label>
-          <input asp-for="DateOfBirth" type="Name" class="form-control datepicker"  id="date-of-birth" placeholder="12/04/2021">
+          <input asp-for="DateOfBirth" type="date" class="form-control datepicker"  id="date-of-birth" placeholder="12/04/2021">
         </div>
         <div class="form-group col-md-6">
           <label asp-for="IDNumber" for="input-id-number"></label>
-          <input asp-for="IDNumber" minlength="13" type="text" class="form-control" id="input-id-number" placeholder="8103016105084">
+          <input asp-for="IDNumber" minlength="13" type="number" class="form-control" id="input-id-number" placeholder="8103016105084">
         </div>
       </div>
 
@@ -74,7 +74,7 @@
         </div>
         <div class="form-group col-md-6">
           <label asp-for="PhoneNumber" for="phone-number"></label>
-          <input asp-for="PhoneNumber" type="text" class="form-control" id="phone-number" /> 
+          <input asp-for="PhoneNumber" type="number" class="form-control" id="phone-number" /> 
         </div>
         </div>
       <div class="form-row">
